@@ -49,13 +49,12 @@
 
             var i = emailArray.indexOf(email);
 
-            if(emailArray.indexOf(email) == -1){
-                if (email == ""){
-                    alert("Please enter choice number");
+            if(emailArray.indexOf(email) <=-1){
+                
+                    alert("Please enter correct choice number");
                     return ;
-                }
-                alert("This option does not exist.");
-                return ;
+                
+                
             }
             
             else {
