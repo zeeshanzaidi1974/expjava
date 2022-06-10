@@ -3,59 +3,51 @@
 <html>
 <head>
     <title></title>
-    <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible"  content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
-		
 </head>
 <body>
 
-  <script src="script.js"></script>
-		<div class = "login-box"  id="login-box">
-				<h2>Login My Bank</h2>
-				<br><br><br>
-				<input  id= "acc_no" class= "input-login"  type = "text" placeholder= "your account number"><br><br>
-				<input  id="pass" class= "input-login"   type = "text"placeholder= "Your"</input>
-		
-		   <br><br>
-		   <div class= "btn">
-		              <button class= "login" id="login-btn">Login</button>
-		
-			
-			</div>
-	</div>
-	
-			<div class="main-page-balance"  id="main-page">
-						
-					<div class = "balance">
-							<h1>Your Balance is :   <span id= "total-balance">1000</span></span></h1> 
-							
-					</div>
-					 
-					   		<div class= "left-div">
-											<h1>Deposit  <span id= "total-deposit">00</span></span></h1>
-											<input class="deposit"  id="deposit_input"  type="text" placeholder="deposit quantity"</input>
-											<div class="addbtn">
-							         				 <button id ="Add_depositBTN" class= "add">Add money</button>
-											</div>
-							  </div>
-							
-							  <div class= "left-div">
-										
-												<h1>Withdraw <span id = "withdraw_total">00</span></h1>
-											<input class="deposit"  id="withdraw_input"  type="text" placeholder="Withdraw quantity"</input>
-											<div class="addbtn">
-							         				 <button class= "add" id=withdraw>Withdraw money</button>
-											</div>
-							
-							  </div>
-			
-			
-			</div>
-	
-	
-  
+<div id="container">
+        <div id="tabs">
+            <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
+            <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
+
+            <div id="clear"></div>
+        </div>
+
+        <div id="cont">
+            <div id="login" class="comm">
+                <h3>Sign in</h3>
+
+                <input id="se" type="email" placeholder="Email" required/>
+                <input id="sp" type="password" placeholder="Password" required/>
+                <input type="submit" onclick="login()" value="Submit"/>
+
+                <p onclick="forTabFun()">Forget Password?</p>
+            </div>
+            <div id="register" class="comm">
+                <h3>Register</h3>
+
+                <input id="re" type="email" placeholder="Email" required/>
+                <input id="rp" type="password" placeholder="Password" required/>
+                <input id="rrp" type="password" placeholder="Re write Password" required/>
+                <input type="submit" onclick="register()" value="Submit"/>
+
+            </div >
+            <div id="forgot" class="comm">
+            <h3>Forgot Password</h3>
+            <div>
+                <input id="fe" type="email" placeholder="Email" required/>
+                <input type="submit" onclick="forgot()" value="Submit"/>
+            </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+
 </body>
 </html>
+
