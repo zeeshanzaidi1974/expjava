@@ -1,75 +1,131 @@
+	var emailArray=[];
+        var passwordArray=[];
 
-var LoginBtn = document.getElementById("login-btn");
-var main_page = document.getElementById("main-page");
-main_page.style.display="none";
-		
-LoginBtn.addEventListener('click' , function(){
-				 var 	Login_box = document.getElementById("login-box");
-				 var 	acc_no  = document.getElementById("acc_no") .value;
-				 var 	pass = document.getElementById("pass") .value;
-				 
-				 Login_box.style.display="none";
-				  // Login_box.style.display='none;
-				
-				 			if(acc_no==' '){ 
-										alert ( 'account number is required' ) ;
-											}
-											else if (pass==' ' ){
-													alert ( 'password is required' ) ;
-												}
-												else{
-															Login_box.style.display="none";
-															main_page.style.display="block";
-													}
-				});
-				
-				//add deposit starts
-				
-				var Add_depositBTN = document.getElementById("  Add_depositBTN"  );
-				Add_depositBTN.addEventListener( 'click',function(){
-					
-							var deposit_input = document.getElementById(" deposit_input"  ).value;
-							var depositNewInput  = parseFloat(  deposit_input   );
-							var total_deposit = document.getElementById(" total-deposit"  ).innerHTML;
-							var Total_NewDeposit = parsFloat( total_deposit );
-							var Total_Deposit = depositNewInput + Total_NewDeposit;
-							
-							document.getElementById("total-deposit").innerHTML=Total_Deposit.toFixed(2);
-							
-							//change balance
-							var total_balance = document.getElementById("total-balance").innerHTML;
-							var NewTotal_balance = parseFloat(total_balance);
-							var Total_New_Balance = depositNewInput + NewTotal_balance;
-			        document.getElementById("total-balance").innerHTML= Total_New_Balance.toFixed(2);
-				});		
-				
-				//withdraw  starts here
-							var withdrawBtn = document.getElementById("withdraw");
-							withdrawBtn.addEventListener('click',function(){
-										var withdraw_input = document.getElementById("withdraw_input").value;
-										var Newwithdraw_input = parseFloat(withdraw_input);
-										var withdraw_total = document.getElementById("withdraw_total").innerHTML;
-										var		Newwithdraw_total = parseFloat(withdraw_total);
-										
-										var Total_withdraw = Newwithdraw_total+Newwithdraw_input;
-										
-										document.getElementById("withdraw_total").innerHTML=Total_withdraw.toFixed(2);
-										
-										
-										//multiplication
-											var TotalBalance = document.getElementById("total-balance").innerHTML;
-											var NewBalance = parseFloat(TotalBalance);
-											var multiplication = NewBalance - Newwithdraw_input;
-											document.getElementById("total-balance").innerHTML= multiplication.toFixed(2);
-							});
-				
-				
-				//withdraw ends
-				
-				
-				
-				
-				
-				
-				//add deposit ends
-				
+        var loginBox = document.getElementById("login");
+        var regBox = document.getElementById("register");
+        var forgetBox = document.getElementById("forgot");
+
+        var loginTab = document.getElementById("lt");
+        var regTab = document.getElementById("rt");
+
+        function regTabFun(){
+            event.preventDefault();
+
+            regBox.style.visibility="visible";
+            loginBox.style.visibility="hidden";
+            forgetBox.style.visibility="hidden";
+
+            regTab.style.backgroundColor="rgb(12, 132, 189)";
+            loginTab.style.backgroundColor="rgba(11, 177, 224, 0.82)";
+        }
+        function loginTabFun(){
+            event.preventDefault();
+
+            regBox.style.visibility="hidden";
+            loginBox.style.visibility="visible";
+            forgetBox.style.visibility="hidden";
+
+            loginTab.style.backgroundColor="rgb(12, 132, 189)";
+            regTab.style.backgroundColor="rgba(11, 177, 224, 0.82)";
+        }
+        function forTabFun(){
+            event.preventDefault();
+
+            regBox.style.visibility="hidden";
+            loginBox.style.visibility="hidden";
+            forgetBox.style.visibility="visible";
+
+            regTab.style.backgroundColor="rgba(11, 177, 224, 0.82)";
+            loginTab.style.backgroundColor="rgba(11, 177, 224, 0.82)";
+
+        }
+
+
+        function register(){
+            event.preventDefault();
+
+            var email = document.getElementById("re").value;
+            var password = document.getElementById("rp").value;
+            var passwordRetype = document.getElementById("rrp").value;
+
+            if (email == ""){
+                alert("Email required.");
+                return ;
+            }
+            else if (password == ""){
+                alert("Password required.");
+                return ;
+            }
+            else if (passwordRetype == ""){
+                alert("Password required.");
+                return ;
+            }
+            else if ( password != passwordRetype ){
+                alert("Password don't match retype your Password.");
+                return;
+            }
+            else if(emailArray.indexOf(email) == -1){
+                emailArray.push(email);
+                passwordArray.push(password);
+
+                alert(email + "  Thanks for registration. \nTry to login Now");
+
+                document.getElementById("re").value ="";
+                document.getElementById("rp").value="";
+                document.getElementById("rrp").value="";
+            }
+            else{
+                alert(email + " is already register.");
+                return ;
+            }
+        }
+        function login(){
+            event.preventDefault();
+
+            var email = document.getElementById("se").value;
+            var password = document.getElementById("sp").value;
+
+            var i = emailArray.indexOf(email);
+
+            if(emailArray.indexOf(email) == -1){
+                if (email == ""){
+                    alert("Email required.");
+                    return ;
+                }
+                alert("Email does not exist.");
+                return ;
+            }
+            else if(passwordArray[i] != password){
+                if (password == ""){
+                    alert("Password required.");
+                    return ;
+                }
+                alert("Password does not match.");
+                return ;
+            }
+            else {
+                alert(email + " yor are login Now \n welcome to our website.");
+
+                document.getElementById("se").value ="";
+                document.getElementById("sp").value="";
+                return ;
+            }
+
+        }
+        function forgot(){
+            event.preventDefault();
+
+            var email = document.getElementById("fe").value;
+
+            if(emailArray.indexOf(email) == -1){
+                if (email == ""){
+                    alert("Email required.");
+                    return ;
+                }
+                alert("Email does not exist.");
+                return ;
+            }
+
+            alert("email is send to your email check it in 24hr. \n Thanks");
+            document.getElementById("fe").value ="";
+        }
