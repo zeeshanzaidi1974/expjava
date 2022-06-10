@@ -2,8 +2,7 @@
         var passwordArray=[];
 
         var loginBox = document.getElementById("login");
-        var regBox = document.getElementById("register");
-        var forgetBox = document.getElementById("forgot");
+        
 
         var loginTab = document.getElementById("lt");
         var regTab = document.getElementById("rt");
