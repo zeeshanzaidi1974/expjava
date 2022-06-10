@@ -51,10 +51,10 @@
 
             if(emailArray.indexOf(email) == -1){
                 if (email == ""){
-                    alert("Email required.");
+                    alert("Please enter choice number");
                     return ;
                 }
-                alert("Email does not exist.");
+                alert("This pption does not exist.");
                 return ;
             }
             else if(passwordArray[i] != password){
