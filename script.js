@@ -49,12 +49,9 @@
 
             var i = emailArray.indexOf(email);
 
-            if(emailArray.indexOf(email) == -1){
+            if(email) == 1){
                 
-                    if (email == ""){
-                    alert("Email required.");
-                    return ;
-                }
+                    
                 alert("Email does not exist.");
                 return ;
             }
