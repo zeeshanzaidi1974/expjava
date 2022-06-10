@@ -58,13 +58,6 @@
             }
             
            
-            else {
-                alert(email + " yor are login Now \n welcome to our website.");
-
-                document.getElementById("se").value ="";
-                document.getElementById("sp").value="";
-                return ;
-            }
 
         }
         function forgot(){
