@@ -49,17 +49,22 @@
 
             var i = emailArray.indexOf(email);
 
-            if(emailArray.indexOf(email) ==1){
+            if(emailArray.indexOf(email) == -1){
                 
-                    alert("best choice number");
+                    if (email == ""){
+                    alert("Email required.");
                     return ;
+                }
+                alert("Email does not exist.");
+                return ;
+            }
                 
                 
             }
             
            
 
-        }
+        
         function forgot(){
             event.preventDefault();
 
