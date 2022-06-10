@@ -54,17 +54,10 @@
                     alert("Please enter choice number");
                     return ;
                 }
-                alert("This pption does not exist.");
+                alert("This option does not exist.");
                 return ;
             }
-            else if(passwordArray[i] != password){
-                if (password == ""){
-                    alert("Password required.");
-                    return ;
-                }
-                alert("Password does not match.");
-                return ;
-            }
+            
             else {
                 alert(email + " yor are login Now \n welcome to our website.");
 
