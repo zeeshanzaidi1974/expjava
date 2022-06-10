@@ -57,6 +57,10 @@
                 
             }
             
+           else  if(emailArray.indexOf(email) ==2){
+                
+                    alert("best choice number");
+                    return ;
             else {
                 alert(email + " yor are login Now \n welcome to our website.");
 
