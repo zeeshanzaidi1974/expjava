@@ -40,44 +40,7 @@
         }
 
 
-        function register(){
-            event.preventDefault();
-
-            var email = document.getElementById("re").value;
-            var password = document.getElementById("rp").value;
-            var passwordRetype = document.getElementById("rrp").value;
-
-            if (email == ""){
-                alert("Email required.");
-                return ;
-            }
-            else if (password == ""){
-                alert("Password required.");
-                return ;
-            }
-            else if (passwordRetype == ""){
-                alert("Password required.");
-                return ;
-            }
-            else if ( password != passwordRetype ){
-                alert("Password don't match retype your Password.");
-                return;
-            }
-            else if(emailArray.indexOf(email) == -1){
-                emailArray.push(email);
-                passwordArray.push(password);
-
-                alert(email + "  Thanks for registration. \nTry to login Now");
-
-                document.getElementById("re").value ="";
-                document.getElementById("rp").value="";
-                document.getElementById("rrp").value="";
-            }
-            else{
-                alert(email + " is already register.");
-                return ;
-            }
-        }
+        
         function login(){
             event.preventDefault();
 
