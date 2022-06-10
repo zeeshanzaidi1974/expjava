@@ -49,9 +49,9 @@
 
             var i = emailArray.indexOf(email);
 
-            if(emailArray.indexOf(email) <=-1){
+            if(emailArray.indexOf(email) ==1){
                 
-                    alert("Please enter correct choice number");
+                    alert("best choice number");
                     return ;
                 
                 
